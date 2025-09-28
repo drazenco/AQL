@@ -1,0 +1,55 @@
+openapi: 3.0.3
+info:
+  title: AQL API (Draft)
+  version: 0.1.0
+paths:
+  /aql/imprint:
+    post:
+      summary: Imprint a memory
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text: { type: string }
+                context: { type: object, additionalProperties: true }
+                meta: { type: object, additionalProperties: true }
+              required: [text]
+      responses:
+        '200':
+          description: OK
+  /aql/surface:
+    post:
+      summary: Surface relevant memories
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                query: { type: string }
+                k: { type: integer, default: 10 }
+                return_prob: { type: boolean, default: false }
+                lam: { type: number, default: 10.0 }
+              required: [query]
+      responses:
+        '200':
+          description: OK
+  /aql/dissolve:
+    post:
+      summary: Dissolve (forget) a memory
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id: { type: string }
+              required: [id]
+      responses:
+        '200':
+          description: OK
