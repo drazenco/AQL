@@ -65,5 +65,11 @@ See `ROADMAP.md` for v0.1 → v0.3 and AQL API stabilization milestones.
 
 ---
 
+## 📚 Draft Papers
+- [AQL ↔ GMQL Manifest (draft)](./AQL_GMQL_Manifest_Draft.pdf)
+- [Seed Ideas Library](./Seed_Ideas_Library.pdf)
+
+---
+
 ## 📜 License
 MIT. See `LICENSE`.
